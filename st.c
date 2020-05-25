@@ -2648,16 +2648,10 @@ draw(void)
 		cx--;
 
 	drawregion(0, 0, term.col, term.row);
-<<<<<<< ours
-	xdrawcursor(cx, term.c.y, term.line[term.c.y][cx],
-			term.ocx, term.ocy, term.line[term.ocy][term.ocx]);
-	term.ocx = cx;
-	term.ocy = term.c.y;
-=======
 	xdrawcursor(cx, term.c.y, TLINE(term.c.y)[cx],
 			term.ocx, term.ocy, TLINE(term.ocy)[term.ocx]);
-	term.ocx = cx, term.ocy = term.c.y;
->>>>>>> theirs
+	term.ocx = cx;
+	term.ocy = term.c.y;
 	xfinishdraw();
 	if (ocx != term.ocx || ocy != term.ocy)
 		xximspot(term.ocx, term.ocy);
